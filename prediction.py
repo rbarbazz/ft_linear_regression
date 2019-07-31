@@ -33,5 +33,6 @@ if __name__ == '__main__':
 # Bonus:
 # - Plotting the data into a graph to see their repartition
 # - Plotting the line resulting from the linear regression into the same graph
-# - Calculating and plotting the precision of the algorithm
+# - Calculating the precision of the algorithm
+# - Plotting the precision of the algorithm
 # - Reset option to reset the thetas

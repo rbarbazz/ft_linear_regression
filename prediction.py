@@ -13,4 +13,8 @@ t0 = thetas.iloc[-1]['t0']
 t1 = thetas.iloc[-1]['t1']
 
 price_prediction = t0 + (t1 * mileage)
-print('Estimated price for this mileage: {}'.format(int(price_prediction)))
+print('Thetas: {} and {}\nEstimated price for this mileage: {}'.format(
+    t0,
+    t1,
+    int(price_prediction)
+))

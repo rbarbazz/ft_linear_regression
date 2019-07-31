@@ -3,7 +3,12 @@ import pandas as pd
 
 
 # Get last computed thetas if exist
-def get_thetas():
+def get_thetas(reset=False):
+    # Reset thetas
+    if reset:
+        thetas = pd.DataFrame({'t0': [0], 't1': [0]})
+        thetas.to_csv('thetas.csv', mode='w', header=['t0', 't1'], index=False)
+
     try:
         thetas = pd.read_csv('thetas.csv')
     except:
@@ -24,3 +29,9 @@ if __name__ == '__main__':
 
     price_prediction = t0 + (t1 * mileage)
     print('Estimated price for this mileage: {}'.format(int(price_prediction)))
+
+# Bonus:
+# - Plotting the data into a graph to see their repartition
+# - Plotting the line resulting from the linear regression into the same graph
+# - Calculating and plotting the precision of the algorithm
+# - Reset option to reset the thetas

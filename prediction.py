@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import math
 
 
 # Get last computed thetas if exist
@@ -16,6 +17,10 @@ def get_thetas(reset=False):
         thetas.to_csv('thetas.csv', mode='w', header=['t0', 't1'], index=False)
     t0 = thetas.iloc[-1]['t0']
     t1 = thetas.iloc[-1]['t1']
+    if math.isnan(t0):
+        t0 = 0
+    if math.isnan(t1):
+        t1 = 0
     return t0, t1
 
 if __name__ == '__main__':

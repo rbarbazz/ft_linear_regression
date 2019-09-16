@@ -27,8 +27,10 @@ if __name__ == '__main__':
     txt_input = input('Please input a car mileage: ')
     try:
         mileage = float(txt_input)
+        if math.isinf(mileage) or mileage < 0:
+            raise ValueError
     except ValueError:
-        sys.exit('Input is not a number')
+        sys.exit('Wrong input provided')
 
     t0, t1 = get_thetas()
 
